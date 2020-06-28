@@ -14,4 +14,4 @@
 
 
 ## UML :
-        - [UML](reactCss.png)
+        - [UML](https://github.com/Balqees-401-advanced-javascript/resty/blob/base/reactCss.png)
