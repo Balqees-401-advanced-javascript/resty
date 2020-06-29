@@ -2,6 +2,7 @@
 
    # resty
 
+## Author: Balqees Qasem
 
 ## Links and Resources :
    #### submission PR :
@@ -13,6 +14,10 @@
 ## How to initialize/run your application :
   -  npm start
 
+## Modules:
+
+ - index.js
+ - app.js
 
 
 ## UML :
