@@ -28,7 +28,7 @@ class Main extends React.Component {
      handleClick = async e => {
         e.preventDefault();
         let URL=document.getElementById('inputUrl').value;
-        let words = this.method + URL ;  
+        // let words = this.method + URL ;  
         let raw = await fetch(`${URL}`);
         let header =(raw.headers.get('Content-Type'));  
         let data = await raw.json();  
