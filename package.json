@@ -11,7 +11,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "vigilant-curie-689b79.netlify.app",
+  "homepage": "/",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Balqees-401-advanced-javascript/resty.git"
