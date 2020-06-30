@@ -1,5 +1,6 @@
 div#main {
-    height: 50pc;
+    height: 100%;
+    min-height: 50pc;
     #input {
         padding: 2%;
         margin: 2% -4% 2% 29%;
@@ -61,7 +62,7 @@ div#main {
         padding: 1%;
         border: 2px solid #89adb7;
         margin: 2% 1% 1% 1%;
-        height: 30pc;
+        
     }
     
     h3 {

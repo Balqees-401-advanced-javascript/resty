@@ -19,15 +19,22 @@ class Main extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            words: ''
+            words: '',
+            header: ''
         }
         this.method = '';
     }
     
-    handleClick = e => {
+     handleClick = async e => {
         e.preventDefault();
-        let words = this.method + document.getElementById('inputUrl').value;
-        this.setState({words}); // re-render 
+        let URL=document.getElementById('inputUrl').value;
+        let words = this.method + URL ;  
+        let raw = await fetch(`${URL}`);
+        let header =(raw.headers.get('Content-Type'));  
+        let data = await raw.json();  
+        let result = JSON.stringify(data ,null,2);
+        this.setState({words: result});
+        this.setState({header:header});
     }
 
   get = e => {
@@ -65,7 +72,22 @@ class Main extends React.Component {
                 <button id="allOtherButton" onClick={this.delete}>DELETE</button>
                 </div>
               <div id= "box">
-                <h3>{this.state.words}</h3>
+
+                      <div>
+                      "Headers":
+                      <pre>
+                     {this.state.header}
+                  </pre>
+                      </div>
+
+                  <div>
+                  "Responce":
+                  <pre>
+                  {this.state.words}
+                  </pre>
+                  </div>
+                 
+                
               </div>
             </div>
         )
