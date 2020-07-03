@@ -1,6 +1,7 @@
+
 div#main {
     height: 100%;
-    min-height: 50pc;
+  
     #input {
         padding: 2%;
         margin: 2% -4% 2% 29%;
@@ -62,7 +63,7 @@ div#main {
         padding: 1%;
         border: 2px solid #89adb7;
         margin: 2% 1% 1% 1%;
-        
+        display: flex;
     }
     
     h3 {
@@ -71,6 +72,70 @@ div#main {
         margin-top: 4%;
         color: #0f264e;
     }
+    div#left {
+        width: 20%;
+        float: left;
+    }
+
+    .loading-false {
+        display: none;
+      }
+     .loading-true{
+       background-color: rgb(245, 233, 233);
+       min-height: 2000px;
+       min-width: 500px;
+       position: absolute;
+       left: 0;
+       right: 0;
+       top: 0;
+       bottom: 0;
+       z-index: 999;
+     
+     
     
-}
+     }
+
+    .lds-hourglass {
+    
+      
+        display: inline-block;
+        position: relative;
+        width: 100px;
+        height: 200px;
+      
+      
+      
+      &:after {
+
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        width: 0;
+        height: 0;
+        margin: 8px;
+        box-sizing: border-box;
+        border: 32px solid rgb(73, 120, 190);
+        border-color: rgb(247, 240, 247) transparent rgb(247, 240, 247) transparent;
+        animation: lds-hourglass 3s infinite;
+        background-color: #89adb7;
+      }
+    }
+  
+      @keyframes lds-hourglass {
+        0% {
+          transform: rotate(0);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+        50% {
+          transform: rotate(900deg);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        100% {
+          transform: rotate(1800deg);
+        }
+      }
+
+        }
+    
+
 
