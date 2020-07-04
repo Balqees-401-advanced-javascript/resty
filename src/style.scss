@@ -1,5 +1,7 @@
+
 div#main {
-    height: 50pc;
+    height: 100%;
+  
     #input {
         padding: 2%;
         margin: 2% -4% 2% 29%;
@@ -61,7 +63,7 @@ div#main {
         padding: 1%;
         border: 2px solid #89adb7;
         margin: 2% 1% 1% 1%;
-        height: 30pc;
+        display: flex;
     }
     
     h3 {
@@ -70,6 +72,89 @@ div#main {
         margin-top: 4%;
         color: #0f264e;
     }
+    div#left {
+        width: 40%;
+        float: left;
+        border-right: 2px solid #89adb7;
+        margin-right: 30px;
+    }
+
+ 
+    .historyButton{
+      width: 94%;
+      height: 43px;
+      text-align: center;
+      background-color: #89adb7;
+      border: none;
+      border-radius: 56px;
+      margin-bottom: 2%;
+      outline: none;
+      &:hover{
+        background-color: rgb(223, 98, 98);
+      }
+    }
+
+    .loading-false {
+        display: none;
+      }
+     .loading-true{
+       background-color: rgb(171, 201, 216);
+       min-height: 2000px;
+       min-width: 500px;
+       position: absolute;
+       left: 0;
+       right: 0;
+       top: 0;
+       bottom: 0;
+       z-index: 999;
+     
+     
     
-}
+     }
+
+    .lds-hourglass {
+    
+      
+        display: inline-block;
+        position: relative;
+        width: 100px;
+        height: 200px;
+        margin: 20% 50% 70% 45%;
+        display: flex;
+      
+      
+      
+      &:after {
+
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        width: 0;
+        height: 0;
+        margin: 8px;
+        box-sizing: border-box;
+        border: 32px solid rgb(73, 120, 190);
+        border-color: rgb(204, 166, 166) #ffffff;
+        animation: lds-hourglass 3s infinite;
+        background-color: rgb(241, 181, 181);
+      }
+    }
+  
+      @keyframes lds-hourglass {
+        0% {
+          transform: rotate(0);
+          animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        }
+        50% {
+          transform: rotate(900deg);
+          animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        100% {
+          transform: rotate(1800deg);
+        }
+      }
+
+        }
+    
+
 
