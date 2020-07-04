@@ -73,15 +73,31 @@ div#main {
         color: #0f264e;
     }
     div#left {
-        width: 20%;
+        width: 40%;
         float: left;
+        border-right: 2px solid #89adb7;
+        margin-right: 30px;
+    }
+
+ 
+    .historyButton{
+      width: 94%;
+      height: 43px;
+      text-align: center;
+      background-color: #89adb7;
+      border: none;
+      border-radius: 56px;
+      margin-bottom: 2%;
+      &:hover{
+        background-color: rgb(223, 98, 98);
+      }
     }
 
     .loading-false {
         display: none;
       }
      .loading-true{
-       background-color: rgb(245, 233, 233);
+       background-color: rgb(171, 201, 216);
        min-height: 2000px;
        min-width: 500px;
        position: absolute;
@@ -102,6 +118,8 @@ div#main {
         position: relative;
         width: 100px;
         height: 200px;
+        margin: 20% 50% 70% 45%;
+        display: flex;
       
       
       
@@ -115,9 +133,9 @@ div#main {
         margin: 8px;
         box-sizing: border-box;
         border: 32px solid rgb(73, 120, 190);
-        border-color: rgb(247, 240, 247) transparent rgb(247, 240, 247) transparent;
+        border-color: rgb(204, 166, 166) #ffffff;
         animation: lds-hourglass 3s infinite;
-        background-color: #89adb7;
+        background-color: rgb(241, 181, 181);
       }
     }
   

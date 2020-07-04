@@ -1,8 +1,26 @@
 header {
     background-color: #89adb7;
+    padding-bottom: 1px;
     h1 {
         color: #FFF;
         text-align: center;
         padding: 2%;
     }
+    
+ li{
+     display: inline;
+     margin-right: 3%;
+ }
+
+ nav {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    &:hover{
+        color: rgb(0, 0, 0); 
+    }
+}
 }

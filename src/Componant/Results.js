@@ -11,6 +11,7 @@ class Results extends React.Component {
     }
 
     render() {
+
         return (
             <div id="main">
 
@@ -23,7 +24,7 @@ class Results extends React.Component {
                     <div id="left">
                         {this.props.mainHistory.map((e, i) => {
                             return (
-                                <button id={i} key={i} onClick={this.data}>{e}</button>
+                                <button className="historyButton" id={i} key={i} onClick={this.data}>{e}</button>
                             )
                         })}
 

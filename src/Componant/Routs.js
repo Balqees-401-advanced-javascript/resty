@@ -4,7 +4,7 @@ import { Route } from 'react-router-dom';
 import { IfRenderer, Then, Else } from './if';
 import Form from './Form';
 import Results from './Results';
-// import History from './history';
+import History from './history';
 
 // Main 
 class Main extends React.Component {
@@ -16,6 +16,7 @@ class Main extends React.Component {
             header: '',
             clicked: false,
             loading: false,
+            mainHistory : [],
           
         }
 
@@ -58,7 +59,7 @@ class Main extends React.Component {
                 </Route>
 
                 <Route path="/History" exact>
-                    {/* <History mainHistory={this.state.mainHistory}/> */}
+                    <History  mainHistory={this.state.mainHistory}  />
                 </Route>
 
             </>)
