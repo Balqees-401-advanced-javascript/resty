@@ -30,6 +30,7 @@ class History extends React.Component {
                         {this.props.mainHistory.map((e, i) => {
                             return (
                                 <button className="historyButton" id={i} key={i} onClick={this.data}>{e}</button>
+                               
                             )
                         })}
 

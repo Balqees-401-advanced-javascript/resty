@@ -2,14 +2,27 @@ import React from 'react';
 
 
 class Results extends React.Component {
+    constructor(props){
+        super(props);
+        this.state={
+           
+            historyResponse : '',
+            historyHeder : '' ,
+          
+        }
+    }
 
     data = e  =>{
       let i = e.target.id;
       let historyHeder = JSON.stringify(JSON.parse(localStorage.getItem('Header'))[i] , null ,2);     
       let historyResponse =JSON.stringify(JSON.parse(localStorage.getItem('Result'))[i], null ,2);
+      let urlClicked =JSON.stringify(JSON.parse(localStorage.getItem('Url'))[i], null ,2);
+      document.getElementById('inputUrl').value = urlClicked;
       this.props.historyClik(historyResponse,historyHeder);
     }
-
+    historyClik(historyResponse, historyHeder){
+        this.setState({historyResponse, historyHeder});
+     }
     render() {
 
         return (

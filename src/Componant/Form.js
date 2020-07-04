@@ -21,24 +21,38 @@ class Form extends React.Component {
         let URL = document.getElementById('inputUrl').value;
         this.state.url.push(URL);
         this.state.methodArr.push(this.state.method);
-        this.state.words.push(` ${this.state.method}     ${URL}`);  
-        let raw = await fetch(`${URL}`, {method :this.state.method });
-        let header = (raw.headers.get('Content-Type'));
-        this.state.headerArr.push(header);
-        let data = await raw.json();
-        let result = JSON.stringify(data, null, 2);
-        this.state.resultArr.push(data);
-        localStorage.setItem('Header', JSON.stringify(this.state.headerArr));
-        localStorage.setItem('Url', JSON.stringify(this.state.url));
-        localStorage.setItem('Method', JSON.stringify(this.state.methodArr));
-        localStorage.setItem('Result',JSON.stringify(this.state.resultArr));
-        this.props.resultTransform(result, this.state.words, header);
-        this.props.show(true);
-        setTimeout(() => {
-            this.props.toggleLoading();
-        }, 1000);
-      
+        this.state.words.push(` ${this.state.method}     ${URL}`);
 
+      fetch(`${URL}`, {method :this.state.method }).then(async (raw)=>{
+
+          let header = (raw.headers.get('Content-Type'));
+          this.state.headerArr.push(header);
+          let data = await raw.json();
+          let result = JSON.stringify(data, null, 2);
+          this.state.resultArr.push(data);
+          localStorage.setItem('Header', JSON.stringify(this.state.headerArr));
+          localStorage.setItem('Url', JSON.stringify(this.state.url));
+          localStorage.setItem('Method', JSON.stringify(this.state.methodArr));
+          localStorage.setItem('Result',JSON.stringify(this.state.resultArr));
+          this.props.resultTransform(result, this.state.words, header);
+          this.props.show(true);
+          setTimeout(() => {
+              this.props.toggleLoading();
+          }, 1000);
+        }).catch(() =>{
+            let header = null;
+            this.state.headerArr.push(header);
+            let result = JSON.stringify({ERR:'ERROR YOU DONT HAVE ACESS'}, null, 2);
+            this.state.resultArr.push({ERR:'ERROR YOU DONT HAVE ACESS'});
+            localStorage.setItem('Header', JSON.stringify(this.state.headerArr));
+            localStorage.setItem('Url', JSON.stringify(this.state.url));
+            localStorage.setItem('Method', JSON.stringify(this.state.methodArr));
+            localStorage.setItem('Result',JSON.stringify(this.state.resultArr));
+            this.props.resultTransform(result, this.state.words, header);
+            setTimeout(() => {
+                this.props.toggleLoading();
+            }, 1000);
+        })
     }
 
     get = e => {
